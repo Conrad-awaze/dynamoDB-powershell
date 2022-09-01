@@ -70,10 +70,10 @@ As we would typically make various read operations to DynamoDB we create a reuab
                 )
  ```
  We create an object for the GetItemRequest operation, we then assign our tableName parameter as the string value for the TableName property. 
-
+```powershell
     $req = New-Object Amazon.DynamoDBv2.Model.GetItemRequest
     $req.TableName = $tableName
-
+```
 We also need to populate the Key property, this is a dictionary which requires both a string value for the key name and an AttributeValue object for the value matching the Item we want to extract. The full command syntax can be found [here](http://docs.aws.amazon.com/sdkfornet/v3/apidocs/items/DynamoDBv2/TDynamoDBv2GetItemRequest.html).
 ```powershell
     $req.Key = New-Object 'system.collections.generic.dictionary[string,Amazon.DynamoDBv2.Model.AttributeValue]'
